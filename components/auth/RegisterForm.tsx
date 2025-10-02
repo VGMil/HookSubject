@@ -5,9 +5,10 @@ import { TextInput, View } from "react-native";
 type RegisterFormProps = {
   onRegisterPress: () => void;
   onSwitchToLogin: () => void;
+  isDisabled?: boolean;
 }
 
-export function RegisterForm({ onRegisterPress, onSwitchToLogin }: RegisterFormProps) {
+export function RegisterForm({ onRegisterPress, onSwitchToLogin, isDisabled = true}: RegisterFormProps) {
   return (
     <>
       <CustomText size='large' bold className='h-20'>Bienvenido!</CustomText> 
@@ -35,14 +36,14 @@ export function RegisterForm({ onRegisterPress, onSwitchToLogin }: RegisterFormP
         
         <CustomButton 
           onPress={onRegisterPress} 
-          variant='primary'
+          variant={isDisabled ? 'disabled' : 'primary'}
         >
           Registrarse
         </CustomButton>
         
         <CustomButton 
           onPress={onSwitchToLogin} 
-          variant='secondary'
+          variant='link'
         >
           Iniciar Sesion
         </CustomButton>

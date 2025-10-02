@@ -6,7 +6,7 @@ interface CustomButtonProps {
     onPress: () => void;
     children: string;
     size?: 'large' | 'medium' | 'small';
-    variant?: 'primary' | 'secondary';
+    variant?: 'primary' | 'secondary'|'disabled'|'link';
     className?: string;
 }
 
@@ -36,6 +36,10 @@ export const CustomButton = ({
                 return 'bg-blue-500 border-black';
             case 'secondary':
                 return 'bg-white border-black';
+            case 'disabled':
+                return 'bg-gray-300 border-black';
+            case 'link':
+                return 'bg-transparent border-0';
             default:
                 return 'bg-blue-500 border-black';
         }
@@ -47,16 +51,20 @@ export const CustomButton = ({
                 return 'white';
             case 'secondary':
                 return 'black';
+            case 'disabled':
+                return 'gray';
+            case 'link':
+                return 'blue';
             default:
                 return 'black';
         }
     };
 
 
-
     return (
         <TouchableOpacity
             onPress={onPress}
+            disabled={variant === 'disabled'}
             className={
                 `flex-1 rounded-md border 
                 ${getSizeStyles()} ${getVariantStyles()}
@@ -66,6 +74,7 @@ export const CustomButton = ({
             <CustomText
                 size="button"
                 color={getTextColor()}
+                underline={variant === 'link'}
             >
                 {children}
             </CustomText>

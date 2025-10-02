@@ -4,9 +4,10 @@ import { Text } from 'react-native';
 interface CustomTextProps {
   children: React.ReactNode;
   size?: 'large' | 'medium' | 'small' | 'button';
-  color?: 'black' | 'white';
+  color?: 'black' | 'white' | 'gray'| 'blue';
   className?: string;
   bold?: boolean;
+  underline?: boolean;
 }
 
 export const CustomText = ({ 
@@ -14,7 +15,8 @@ export const CustomText = ({
   size = 'medium', 
   color = 'black', 
   className = '',
-  bold = false 
+  bold = false,
+  underline = false
 }: CustomTextProps) => {
   const getSizeStyles = () => {
     switch (size) {
@@ -30,9 +32,22 @@ export const CustomText = ({
         return 'text-base';
     }
   };
-
+  const getColorStyles = () => {
+    switch (color) {
+      case 'white':
+        return 'text-white';
+      case 'black':
+        return 'text-black';
+      case 'gray':
+        return 'text-gray-500';
+      case 'blue':
+        return 'text-blue-500';
+      default:
+        return 'text-black';
+    }
+  };
   return (
-    <Text className={`text-${color} ${getSizeStyles()} ${bold ? 'font-bold' : ''} ${className}`}>
+    <Text className={`${getColorStyles()} ${getSizeStyles()} ${bold ? 'font-bold' : ''} ${underline ? 'underline' : ''} ${className}`}>
       {children}
     </Text>
   );

@@ -5,9 +5,10 @@ import { TextInput, View } from "react-native";
 type LoginFormProps = {
   onLoginPress: () => void;
   onSwitchToRegister: () => void;
+  isDisabled?: boolean;
 }
 
-export function LoginForm({ onLoginPress, onSwitchToRegister }: LoginFormProps) {
+export function LoginForm({ onLoginPress, onSwitchToRegister, isDisabled = true }: LoginFormProps) {
   return (
     <>
       <CustomText size='large' bold className='h-20'>Regresaste!</CustomText> 
@@ -26,13 +27,13 @@ export function LoginForm({ onLoginPress, onSwitchToRegister }: LoginFormProps) 
       <View className='flex-row gap-2'>
         <CustomButton 
           onPress={onSwitchToRegister} 
-          variant='primary'
+          variant='link'
         >
           Registrarse
         </CustomButton>
         <CustomButton 
           onPress={onLoginPress} 
-          variant='secondary'
+          variant={isDisabled ? 'disabled' : 'secondary'}
         >
           Iniciar sesión
         </CustomButton>
