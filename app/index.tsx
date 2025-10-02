@@ -1,4 +1,4 @@
-import { LoginForm } from '@/components/auth/LoginForm';
+import { RegisterForm } from '@/components/auth/RegisterForm';
 import '@/global.css';
 import { LinearGradient } from 'expo-linear-gradient';
 import { ImageBackground } from "react-native";
@@ -14,9 +14,13 @@ export default function Index() {
         className="flex-1 items-end justify-end"
       >
         <SafeAreaView className="items-start justify-start flex-col w-full h-auto px-8 gap-4" >
-          <LoginForm 
+          {/* <LoginForm 
             onLoginPress={() => {}} 
             onSwitchToRegister={() => {}} 
+          /> */}
+          <RegisterForm
+            onRegisterPress={() => {}} 
+            onSwitchToLogin={() => {}} 
           />
         </SafeAreaView>
         </LinearGradient>
