@@ -3,22 +3,32 @@ import { RegisterForm } from '@/components/auth/RegisterForm';
 import '@/global.css';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
-import { ImageBackground } from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Dimensions, ImageBackground, View } from "react-native";
+
+const HEIGHT = Dimensions.get('window').height;
+const WIDTH = Dimensions.get('window').width;
+const image = { 'uri': require('../assets/bg/background.png') };
 
 export default function Index() {
   const [isLogin, setIsLogin] = useState(true);
-  const image = { 'uri': require('../assets/bg/background.png') };
-
 
   return (
-    <ImageBackground source={image.uri} resizeMode="cover" className="w-full h-full">
+    <View className="w-full h-full bg-white items-center justify-end p-8">
+    <ImageBackground 
+      source={image.uri}
+      resizeMode="cover"
+      className='absolute inset-auto -z-1'
+      style={{
+        height: HEIGHT,
+        width: WIDTH}}
+      >
       <LinearGradient
         colors={['rgba(255,255,255,1)','transparent','transparent', 'rgba(255,255,255,1)']}
-        locations={[0.01, 0.15,0.5, 0.7]}
+        locations={[0.01, 0.15,0.2, 0.7]}
         className="flex-1 items-end justify-end"
-      >
-        <SafeAreaView className="items-start justify-start flex-col w-full h-auto px-8 gap-4" >
+      />
+    </ImageBackground>
+      <View className="items-start justify-end flex-col w-full gap-4 mb-2" >
           {
             isLogin ? ( // operador ternario simplificacion del if
               <LoginForm
@@ -33,8 +43,7 @@ export default function Index() {
             )
           }
           
-        </SafeAreaView>
-        </LinearGradient>
-    </ImageBackground>
+        </View>
+    </View>
   );
 }
