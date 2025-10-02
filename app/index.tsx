@@ -15,11 +15,11 @@ export default function Index() {
         locations={[0, 0.6]}
         className="w-full h-full items-end justify-end"
       >
-        <SafeAreaView className="items-start justify-start flex-col w-full h-2/5 px-8 gap-2" >
+        <SafeAreaView className="items-start justify-start flex-col w-full h-2/5 px-8 gap-4" >
           <CustomText size='large' bold className='h-20'>Regresaste!</CustomText> 
-          <CustomText size='small' className='-mt-6'>Ingresa tus datos para acceder a nuestra app!</CustomText>
-          <TextInput className='bg-white text-black rounded-full p-3 w-full border border-black' placeholder='Email' />
-          <TextInput className='bg-white text-black rounded-full p-3 w-full border border-black' placeholder='Password' />
+          <CustomText size='small' className='-mt-8'>Ingresa tus datos para acceder a nuestra app!</CustomText>
+          <TextInput className='bg-white text-black rounded-lg p-3 w-full border border-black' placeholder='Email' />
+          <TextInput className='bg-white text-black rounded-lg p-3 w-full border border-black' placeholder='Password' />
           <View className='flex-row gap-2'>
             <CustomButton onPress={() => {}} variant='secondary' >Iniciar sesión</CustomButton>
             <CustomButton onPress={() => {}} variant='primary' >Registrarse</CustomButton>
