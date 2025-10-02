@@ -1,8 +1,9 @@
+import { CustomButton } from '@/components/ui/CustomButton';
 import { CustomText } from '@/components/ui/CustomText';
 import '@/global.css';
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { ImageBackground, TextInput, TouchableOpacity, View } from "react-native";
+import { ImageBackground, TextInput, View } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Index() {
@@ -20,12 +21,8 @@ export default function Index() {
           <TextInput className='bg-white text-black rounded-full p-3 w-full border border-black' placeholder='Email' />
           <TextInput className='bg-white text-black rounded-full p-3 w-full border border-black' placeholder='Password' />
           <View className='flex-row gap-2'>
-          <TouchableOpacity className='flex-1 bg-white rounded-md p-3 border border-black'>
-            <CustomText size='button' bold>Iniciar Sesion</CustomText>
-          </TouchableOpacity>
-          <TouchableOpacity className='flex-1 bg-blue-500 rounded-md p-3 border border-black'>
-            <CustomText size='button' bold color='white'>Registrarse</CustomText>
-          </TouchableOpacity>
+            <CustomButton onPress={() => {}} variant='secondary' >Iniciar sesión</CustomButton>
+            <CustomButton onPress={() => {}} variant='primary' >Registrarse</CustomButton>
           </View>
         </SafeAreaView>
       </LinearGradient>
