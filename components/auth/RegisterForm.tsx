@@ -34,17 +34,17 @@ export function RegisterForm({ onRegisterPress, onSwitchToLogin }: RegisterFormP
       <View className='flex-row gap-2'>
         
         <CustomButton 
-          onPress={onSwitchToLogin} 
+          onPress={onRegisterPress} 
           variant='primary'
         >
           Registrarse
         </CustomButton>
         
         <CustomButton 
-          onPress={onRegisterPress} 
+          onPress={onSwitchToLogin} 
           variant='secondary'
         >
-          Volver
+          Iniciar Sesion
         </CustomButton>
       </View>
     </>

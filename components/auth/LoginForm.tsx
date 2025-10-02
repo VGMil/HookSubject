@@ -25,18 +25,18 @@ export function LoginForm({ onLoginPress, onSwitchToRegister }: LoginFormProps) 
       
       <View className='flex-row gap-2'>
         <CustomButton 
+          onPress={onSwitchToRegister} 
+          variant='primary'
+        >
+          Registrarse
+        </CustomButton>
+        <CustomButton 
           onPress={onLoginPress} 
           variant='secondary'
         >
           Iniciar sesión
         </CustomButton>
         
-        <CustomButton 
-          onPress={onSwitchToRegister} 
-          variant='primary'
-        >
-          Registrarse
-        </CustomButton>
       </View>
     </>
   );
