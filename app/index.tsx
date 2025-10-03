@@ -2,6 +2,7 @@ import { LoginForm } from '@/components/auth/LoginForm';
 import { RegisterForm } from '@/components/auth/RegisterForm';
 import '@/global.css';
 import { LinearGradient } from 'expo-linear-gradient';
+import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { Dimensions, ImageBackground, View } from "react-native";
 import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-native-reanimated';
@@ -90,6 +91,7 @@ export default function Index() {
           }
           
         </Animated.View>
+        <StatusBar style="dark" />
     </View>
   );
 }
