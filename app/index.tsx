@@ -9,7 +9,7 @@ import Animated, { useAnimatedStyle, useSharedValue, withSpring } from 'react-na
 
 const HEIGHT = Dimensions.get('window').height;
 const WIDTH = Dimensions.get('window').width;
-const image = { 'uri': require('../assets/bg/background.png') };
+const image = { 'uri': require('../assets/bg/login.png') };
 
 const AnimatedImageBackground = Animated.createAnimatedComponent(ImageBackground);
 
