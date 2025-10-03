@@ -1,11 +1,13 @@
+import { LinearGradient } from 'expo-linear-gradient';
 import React, { useEffect } from 'react';
 import { ImageBackground, ImageSourcePropType, View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+
 interface BackGroundProps {
     image: ImageSourcePropType;
     height: number;
     width: number;
-    children: React.ReactNode;
+    children?: React.ReactNode;
     animation: () => any;
 }
 const AnimatedImageBackground = Animated.createAnimatedComponent(ImageBackground);
@@ -41,7 +43,11 @@ const BackGround = ({
                         },
                         animatedImageStyle,
                     ]}>
-                    {children}
+        <LinearGradient
+          colors={['rgba(255,255,255,1)', 'transparent', 'transparent', 'rgba(255,255,255,1)']}
+          locations={[0.01, 0.15, 0.2, 0.7]}
+          className="flex-1 items-end justify-end"
+        />
                 </AnimatedImageBackground>
             </View>
         )

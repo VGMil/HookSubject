@@ -2,7 +2,6 @@ import { LoginForm } from '@/components/auth/LoginForm';
 import { RegisterForm } from '@/components/auth/RegisterForm';
 import BackGround from '@/components/ui/BackGround';
 import '@/global.css';
-import { LinearGradient } from 'expo-linear-gradient';
 import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useState } from 'react';
@@ -49,11 +48,6 @@ export default function Index() {
         height={HEIGHT}
         width={WIDTH}
         animation={backGroundAnimation}>
-        <LinearGradient
-          colors={['rgba(255,255,255,1)', 'transparent', 'transparent', 'rgba(255,255,255,1)']}
-          locations={isLogin ? [0.01, 0.15, 0.2, 0.7] : [0.01, 0.15, 0.2, 0.6]}
-          className="flex-1 items-end justify-end"
-        />
       </BackGround>
 
       <Animated.View
