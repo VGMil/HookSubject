@@ -2,6 +2,7 @@ import { LoginForm } from '@/components/auth/LoginForm';
 import { RegisterForm } from '@/components/auth/RegisterForm';
 import '@/global.css';
 import { LinearGradient } from 'expo-linear-gradient';
+import { router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { Dimensions, ImageBackground, View } from "react-native";
@@ -79,13 +80,15 @@ export default function Index() {
           {
             isLogin ? ( // operador ternario simplificacion del if
               <LoginForm
-                onLoginPress={() => {}} 
+                onLoginPress={() => { router.replace('/dashboard') }} 
                 onSwitchToRegister={() => {toggleForm(false)}} 
+                isDisabled={false}
               />
             ) : (//else
               <RegisterForm
-                onRegisterPress={() => {}} 
-                onSwitchToLogin={() => {toggleForm(true)}} 
+                onRegisterPress={() => { router.replace('/+not-found') }} 
+                onSwitchToLogin={() => {toggleForm(true)}}
+                isDisabled={false} 
               />
             )
           }
