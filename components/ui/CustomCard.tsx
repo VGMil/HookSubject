@@ -1,10 +1,15 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import { View } from 'react-native';
 
-const CustomCard = () => {
+interface CustomCardProps{
+  children: React.ReactNode;
+  className?: string;
+}
+
+const CustomCard = ({children, className = ''}: CustomCardProps) => {
   return (
-    <View>
-      <Text>CustomCard</Text>
+    <View className={`bg-white p-4 rounded-md shadow-md w-fit h-fit ${className}`}>
+      {children}
     </View>
   )
 }
