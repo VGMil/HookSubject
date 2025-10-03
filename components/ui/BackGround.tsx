@@ -7,7 +7,7 @@ interface BackGroundProps {
     image: ImageSourcePropType;
     height: number;
     width: number;
-    children?: React.ReactNode;
+    opacity?: number;
     animation: () => any;
 }
 const AnimatedImageBackground = Animated.createAnimatedComponent(ImageBackground);
@@ -16,7 +16,8 @@ const BackGround = ({
     image,
     height,
     width,
-    children,
+    opacity = 1,
+    
     animation }: BackGroundProps) => {
         const scale = useSharedValue(1);
 
@@ -40,6 +41,7 @@ const BackGround = ({
                         {
                             height: height,
                             width: width,
+                            opacity: opacity,
                         },
                         animatedImageStyle,
                     ]}>

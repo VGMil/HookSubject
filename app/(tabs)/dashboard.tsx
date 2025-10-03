@@ -32,6 +32,7 @@ const backGroundAnimation = useCallback(() => {
         image={image}
         height={HEIGHT}
         width={WIDTH}
+        opacity={0.5}
         animation={backGroundAnimation}>
       </BackGround>
     </View>
