@@ -31,7 +31,7 @@ const backGroundAnimation = useCallback(() => {
     );
 }, []);
   return (
-    <View className='flex-1 items-center justify-start gap-4'>
+    <View className='flex-1 items-center justify-start gap-4 p-4'>
       <BackGround
         image={image}
         height={HEIGHT}

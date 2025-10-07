@@ -1,14 +1,18 @@
+import Feather from "@expo/vector-icons/Feather";
 import { Tabs } from "expo-router";
 import { Text } from "react-native";
 
 export default function Layout() {
   return (
-    <Tabs>
+    <Tabs screenOptions={{
+      headerShown:false
+    }
+    }>
     <Tabs.Screen 
         name="dashboard"
         options={{
             title: 'Inicio',
-            tabBarIcon: () => <Text>✨</Text>,
+            tabBarIcon: () => <Feather name="home" size={24} color="black" />
         }} />
     
 
@@ -16,7 +20,7 @@ export default function Layout() {
         name="settings"
         options={{
             title: 'Configuración',
-            tabBarIcon: () => <Text>⚙️</Text>,
+            tabBarIcon: () => <Feather name="settings" size={24} color="black" />
         }} />
     </Tabs>
   );
